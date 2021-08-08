@@ -1,0 +1,9 @@
+---
+
+
+
+- name: creating child module
+  copy:
+   src: /etc/passwd
+   dest: /home/ubuntu/users
+...

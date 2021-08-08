@@ -1,0 +1,20 @@
+---
+- name: Fetching File from 1st server to Controleer
+  hosts: 172.31.0.104
+  tasks:
+   - name: Fetching files
+     fetch:
+      src: /home/ubuntu/Sample_file
+      dest: /home/ubuntu
+
+- name: Copying files from controller to 2nd server
+  hosts: 172.31.3.241
+  tasks:
+   - name: Copying files
+     copy:
+      src: /home/ubuntu/172.31.0.104/home/ubuntu/Sample_file
+      dest: /home/ubuntu
+
+        
+     
+...

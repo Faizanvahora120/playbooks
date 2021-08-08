@@ -1,0 +1,39 @@
+---
+- name: Creating multiple users and copying files present in users directories
+  hosts: all
+  tasks:
+   - name: Creating multiple users
+     user:
+      name: "{{item.a}}"
+      password: "{{item.b}}"
+      home: "{{item.c}}"
+     with_items:
+      - {a: uzair, b: uzair, c: '/home/ubuntu/uzair'}
+      - {a: hasim, b: hasim, c: /home/ubuntu/hasim}
+   - name: Copying files from user directory
+     copy:
+      src: "{{item.a}}"
+      dest: "{{item.b}}"
+     with_items:
+      - {a: /etc/passwd, b: /home/ubuntu/uzair}
+      - {a: /etc/group, b: /home/ubuntu/hasim}
+
+             
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+...

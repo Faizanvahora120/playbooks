@@ -1,0 +1,28 @@
+---
+- name: Configuring Apache2
+  hosts: all
+  tasks:
+   - name: Installing Apache2
+     apt:
+      name: apache2
+      state: present
+      update_cache: yes
+   - name: Changing the content of apache2
+     copy:
+      content: "Welcome to Devops World"
+      dest: /var/www/html/index.html
+   - name: Restarting the apache2
+     service:
+      name: apache2        
+      state: restarted
+   - name: Checking url request from server is reachable
+     uri:
+      url: "{{item.a}}"
+      status_code: "{{item.b}}"
+     with_items:
+      - {a: http://172.31.0.104:80, b: 200}
+      - {a: http://172.31.3.241:80, b: 200}
+
+
+     
+...

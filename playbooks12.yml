@@ -1,0 +1,13 @@
+---
+- name: Implementing items in a module
+  hosts: all
+  tasks:
+   - name: Installing s/w
+     apt:
+      name: ['tree','ant','maven']
+      state: present
+      update_cache: yes
+
+
+
+...

@@ -1,0 +1,14 @@
+---
+- name: Creating a new file
+  hosts: all
+  tasks:
+   - name: Creating files
+     file:
+      name: /home/ubuntu/Logs
+      state: touch
+      owner: Camden
+      group: mark
+      mode: 721
+
+
+...

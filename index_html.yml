@@ -1,0 +1,12 @@
+---
+- name: changing content index_html file
+  copy:
+   content: "Creating child new_playbook"
+   dest: /var/www/html/index.html
+
+
+
+
+
+
+...

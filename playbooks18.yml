@@ -1,0 +1,35 @@
+---
+- name: Implemening Error handling or Except handling
+  hosts: all
+  tasks:
+   - block:
+      - name: Installing tomcat8
+        apt:
+         name: tomcat8
+         state: present
+         update_cache: yes
+     rescue:
+      - name: Installing tomcat9
+        apt:
+         name: tomcat9
+         state: present
+         update_cache: yes
+     always:
+      - name: Display output
+        debug:
+         msg: Tomcat setup successful
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+...

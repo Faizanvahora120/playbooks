@@ -1,0 +1,16 @@
+---
+- name: Installing Tree and ant
+  hosts: Webservers
+  tasks:
+   - name: Installing Ant
+     apt:
+      name: "{{a}}"
+      state: "{{c}}"
+      update_cache: "{{d}}"
+   - name: Installing Tree
+     apt:
+      name: "{{e}}"
+      state: "{{b}}"
+      update_cache: "{{d}}"
+
+...

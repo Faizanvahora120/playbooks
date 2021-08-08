@@ -1,0 +1,16 @@
+---
+- name: Configuring parent playbook
+  hosts: all
+  tasks:
+   - name: Call child playbooks
+     include: "{{item}}"
+     with_items:
+      - install.yml
+      - index_html.yml
+      - restarting.yml
+      - checking_url_response.yml
+
+
+
+   
+

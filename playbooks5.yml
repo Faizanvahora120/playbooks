@@ -1,0 +1,10 @@
+---
+- name: INstalling Software Packages
+  hosts: all
+  tasks: 
+   - name: Checking variables
+     apt:
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+...

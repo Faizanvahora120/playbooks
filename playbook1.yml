@@ -1,0 +1,14 @@
+---
+- name: Creating a new User
+  hosts: all
+  tasks: 
+   - name: Create user
+     user:
+      name: Camden
+      password: Camden
+      comment: "Creating normal User"
+      uid: 1342
+      home: /home/ubuntu/camden
+      shell: /bin/bash
+       
+...

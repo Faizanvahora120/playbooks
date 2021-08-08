@@ -1,0 +1,10 @@
+---
+- name: Installing S/W
+  hosts: Applicationservers
+  tasks:
+   - name: Installing ant
+     apt:
+      name: "{{a}}"
+      state: "{{b}}"
+
+...

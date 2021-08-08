@@ -1,0 +1,20 @@
+---
+- name: Creating a parent playbook
+  hosts: all
+  tasks:
+   - name: copying a file
+     include: "{{item}}"
+     with_items:
+      - playbooks24.yml
+
+
+   
+
+
+
+
+
+
+
+
+...

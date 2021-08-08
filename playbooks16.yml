@@ -1,0 +1,30 @@
+---
+- name: Implementing Tags
+  hosts: all
+  tasks:
+   - name: Installing tree
+     apt:
+      name: tree
+      state: present
+      update_cache: no
+     tags: tree_installation
+   - name: Creating a directory
+     file:
+      name: Dir1
+      dest: /tmp/Dir1
+      state: directory
+     tags: directory_creation
+   - name: removing directory
+     file:
+      name: Dir1
+      src: /tmp/Dir1
+      state: absent 
+
+      
+
+
+
+
+
+
+...
